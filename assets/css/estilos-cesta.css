@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Raleway:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Raleway;
+  box-sizing: border-box; }
+
+nav {
+  background: #343E3D;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px; }
+  nav .nav {
+    display: flex;
+    list-style: none; }
+    nav .nav a {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      padding: 10px 30px; }
+      nav .nav a:hover {
+        background: #1d2222; }
+  nav h1 {
+    color: white;
+    font-weight: light; }
+
+section {
+  display: flex;
+  justify-content: center; }
+  section .contenedor {
+    width: 50%; }
+    section .contenedor h1 {
+      padding: 20px 0;
+      font-size: 40px; }
+  section .cesta {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap; }
+    section .cesta .cesta-group {
+      width: 100%;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 20px; }
+      section .cesta .cesta-group .cesta-img {
+        width: 150px; }
+        section .cesta .cesta-group .cesta-img img {
+          width: 100%; }
+      section .cesta .cesta-group .cesta-boton .boton-eliminar {
+        color: red;
+        background: none;
+        border: none; }
+        section .cesta .cesta-group .cesta-boton .boton-eliminar:hover {
+          color: #cc0000;
+          cursor: pointer; }
+    section .cesta b {
+      color: #3C91E6; }
+    section .cesta p {
+      text-align: center; }
+  section .pagar {
+    width: 100%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px; }
+    section .pagar .pagar-boton .boton-confirmacion {
+      text-decoration: none;
+      color: white;
+      background: #3C91E6;
+      padding: 10px 40px; }
+      section .pagar .pagar-boton .boton-confirmacion:hover {
+        background: #1b78d4; }

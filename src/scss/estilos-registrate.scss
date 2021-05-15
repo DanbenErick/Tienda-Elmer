@@ -1,0 +1,57 @@
+@import "modules/basico";
+@import "modules/nav";
+
+section {
+  display: flex;
+  justify-content: center;
+  padding: 150px 0;
+  h1 {
+    padding: 15px 0;
+  }
+  .formulario {
+    width: 50%;
+    box-shadow: 0px 0px 40px rgba(black, .2);
+    padding: 40px;
+    
+    .form-container {
+
+      .input-group {
+        width: 100%;
+        padding-bottom: 20px;
+        label {
+          font-family: Poppins;
+          width: 100%;
+          // color: $color-secundario;
+          padding-bottom: 5px;
+        }
+        input {
+          font-family: Poppins;
+          width: 100%;
+          padding: 5px;
+          border: $color-secundario 1px solid;
+          &:focus {
+            outline: none;
+            border: darken($color-secundario, 10) 1px solid;
+          }
+        }
+        button {
+          font-family: Poppins;
+          width: 100%;
+          background: $color-secundario;
+          border: none;
+          text-align: center;
+          color: white;
+          padding: 10px 0;
+          &:hover {
+            background: darken($color-secundario, 10);
+          }
+        }
+      }
+    }
+    p {
+      a {
+        color: $color-secundario;
+      }
+    }
+  }
+}

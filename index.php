@@ -8,18 +8,7 @@
   <link rel="stylesheet" href="assets/css/estilos.css">
 </head>
 <body>
-  <nav>
-    <ul class="titulo">
-      <h1>Comercio Pasco</h1>
-    </ul>
-    <ul class="nav">
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Dulces</a></li>
-      <li><a href="#">Lacteos</a></li>
-      <li><a href="#">Chips</a></li>
-      <li><a href="#">Ingresar</a></li>
-    </ul>
-  </nav>
+  <?php require_once("templates/nav.inc.php"); ?>
   <section>
     <main>
       <h1>Productos</h1>

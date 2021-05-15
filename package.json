@@ -4,7 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "sass": "node-sass ./src/scss/estilos.scss ./assets/css/estilos.css -w"
+    "sass:index": "node-sass ./src/scss/estilos.scss ./assets/css/estilos.css -w",
+    "sass:ingresar": "node-sass ./src/scss/estilos-ingresar.scss ./assets/css/estilos-ingresar.css -w",
+    "sass:registrate": "node-sass ./src/scss/estilos-registrate.scss ./assets/css/estilos-registrate.css -w",
+    "sass:cesta": "node-sass ./src/scss/estilos-cesta.scss ./assets/css/estilos-cesta.css -w",
+    "sass:lacteos": "node-sass ./src/scss/estilos-lacteos.scss ./assets/css/estilos-lacteos.css -w",
+    "sass:dulces": "node-sass ./src/scss/estilos-dulces.scss ./assets/css/estilos-dulces.css -w"
   },
   "dependencies": {
     "node-sass": "^6.0.0"
