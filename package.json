@@ -1,0 +1,12 @@
+{
+  "name": "entregable-4-elmer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "sass": "node-sass ./src/scss/estilos.scss ./assets/css/estilos.css -w"
+  },
+  "dependencies": {
+    "node-sass": "^6.0.0"
+  }
+}

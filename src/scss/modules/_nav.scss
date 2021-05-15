@@ -1,0 +1,24 @@
+nav {
+  background: $color_primario;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  .nav {
+    display: flex;
+    list-style: none;
+    a {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      padding: 10px 30px;
+      &:hover {
+        background: darken($color_primario, 10);
+      }
+    }
+  }
+  h1 {
+    color: white;
+    font-weight: light;
+  }
+}
