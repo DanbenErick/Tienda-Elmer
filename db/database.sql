@@ -12,6 +12,7 @@ CREATE TABLE usuarios(
   id int not null primary key AUTO_INCREMENT,
   nombre varchar(200) not null,
   usuario varchar(200) not null,
+  direccion varchar(200) not null,
   password varchar(200) not null,
   permission int not null
 );
@@ -30,7 +31,8 @@ CREATE TABLE categoria (
 CREATE TABLE ventas (
   id int not null primary key AUTO_INCREMENT,
   fecha datetime not null,
-  productos text
+  cliente int not null,
+  productos text not null
 );
 
 INSERT INTO categoria (nombre) VALUES('Dulces'),('Lacteos');

@@ -1,0 +1,41 @@
+@import "modules/basico";
+@import "modules/nav";
+
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  main {
+    padding-top: 100px;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .columna-2 {
+      img {
+        width: 400px;
+      }
+    }
+    h1 {
+      color: $color-primario;
+      font-size: 40px;
+      padding: 20px 0;
+    }
+    .group-information {
+      padding: 10px 0;
+      h2 {
+        font-size: 20px;
+        font-weight: normal;
+        &::after {
+          content: '';
+          display: block;
+          width: 100px;
+          height: 2px;
+          background: $color-primario;
+        }
+      }
+      p {
+        padding-top: 10px;
+      }
+    }
+  }
+}

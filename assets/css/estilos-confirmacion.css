@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Raleway:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Raleway;
+  box-sizing: border-box; }
+
+nav {
+  background: #343E3D;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px; }
+  nav .nav {
+    display: flex;
+    list-style: none; }
+    nav .nav a {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      padding: 10px 30px; }
+      nav .nav a:hover {
+        background: #1d2222; }
+  nav h1 {
+    color: white;
+    font-weight: light; }
+
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+  section main {
+    padding-top: 100px;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); }
+    section main .columna-2 img {
+      width: 400px; }
+    section main h1 {
+      color: #343E3D;
+      font-size: 40px;
+      padding: 20px 0; }
+    section main .group-information {
+      padding: 10px 0; }
+      section main .group-information h2 {
+        font-size: 20px;
+        font-weight: normal; }
+        section main .group-information h2::after {
+          content: '';
+          display: block;
+          width: 100px;
+          height: 2px;
+          background: #343E3D; }
+      section main .group-information p {
+        padding-top: 10px; }
