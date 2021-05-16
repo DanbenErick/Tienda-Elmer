@@ -1,5 +1,9 @@
+<?php
+  session_start();
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,21 +12,22 @@
   <link rel="stylesheet" href="assets/css/estilos-ingresar.css">
 </head>
 <body>
-  <?php require_once("templates/nav.inc.php"); ?>
-
+  <?php
+    $active_link = "ingresar";
+    require_once("templates/nav.inc.php");
+  ?>
   <section>
     <div class="formulario">
-      
       <h1>Iniciar Sesion</h1>
       <div class="form-container">
-        <form action="">
+        <form action="php/ingresar.php" method="POST">
           <div class="input-group">
             <label for="">Usuario</label>
-            <input type="text">
+            <input type="text" name="usuario">
           </div>
           <div class="input-group">
             <label for="">Contraseña</label>
-            <input type="password">
+            <input type="password" name="password">
           </div>
           <div class="input-group">
             <button type="submit">Ingresar</button>
@@ -32,5 +37,16 @@
       <p>No tienes cuenta registrate <a href="registrate.php">aqui</a></p>
     </div>
   </section>
+  <?php if(@$_GET['mensaje']):?>
+    <script>
+      const mensaje = "<?= $_GET['mensaje']?>"
+
+      switch(mensaje) {
+        case 'exito_registro':
+          alert("Se confirmo el registro del usuario")
+          break;
+      }
+    </script>
+  <?php endif;?>
 </body>
 </html>

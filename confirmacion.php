@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +13,10 @@
   <link rel="stylesheet" href="assets/css/estilos-confirmacion.css">
 </head>
 <body>
-  <?php require_once("templates/nav.inc.php");?>
+  <?php
+    $active_link = "confirmacion";
+    require_once("templates/nav.inc.php");
+  ?>
   <section>
     <main>
       <div class="columna-1">

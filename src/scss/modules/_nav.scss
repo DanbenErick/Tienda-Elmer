@@ -15,6 +15,9 @@ nav {
       &:hover {
         background: darken($color_primario, 10);
       }
+      &.active {
+        background: darken($color_primario, 10);
+      }
     }
   }
   h1 {

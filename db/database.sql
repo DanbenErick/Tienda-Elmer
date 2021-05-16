@@ -12,6 +12,7 @@ CREATE TABLE usuarios(
   id int not null primary key AUTO_INCREMENT,
   nombre varchar(200) not null,
   usuario varchar(200) not null,
+  correo varchar(200) not null,
   direccion varchar(200) not null,
   password varchar(200) not null,
   permission int not null

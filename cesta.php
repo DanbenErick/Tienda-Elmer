@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +13,10 @@
   <link rel="stylesheet" href="assets/css/estilos-cesta.css">
 </head>
 <body>
-  <?php require_once("templates/nav.inc.php");?>
+  <?php
+    $active_link = "cesta";
+    require_once("templates/nav.inc.php");
+  ?>
   <section>
     <div class="contenedor">
       <h1>Cesta</h1>

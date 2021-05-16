@@ -1,5 +1,10 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,34 +20,49 @@
       
       <h1>Registrate</h1>
       <div class="form-container">
-        <form action="">
+        <form action="php/registrar.php" method="POST">
           <div class="input-group">
             <label for="">Nombre Completo</label>
-            <input type="text">
+            <input type="text" name="nombre">
           </div>
           <div class="input-group">
             <label for="">Correo Electronico</label>
-            <input type="email">
+            <input type="email" name="correo">
           </div>
           <div class="input-group">
             <label for="">Usuario</label>
-            <input type="text">
+            <input type="text" name="usuario">
+          </div>
+          <div class="input-group">
+            <label for="">Direccion de Domicilio</label>
+            <input type="text" name="direccion">
           </div>
           <div class="input-group">
             <label for="">Contraseña</label>
-            <input type="password">
+            <input type="password" name="password">
           </div>
           <div class="input-group">
             <label for="">Repite Contraseña</label>
-            <input type="password">
+            <input type="password" name="rep_password">
           </div>
           <div class="input-group">
-            <button type="submit">Ingresar</button>
+            <button type="submit">Registrar Cuenta</button>
           </div>
         </form>
       </div>
-      <p>No tienes cuenta registrate <a href="registrarse.php">aqui</a></p>
+      <p style="display: none; color: red;" id="valoresVacios">No rellenaste todos los datos</p>
+      <p style="display: none; color: red;" id="invalidPassword">Las contraseñas no coinciden</p>
     </div>
   </section>
+  <?php if(@$_GET['error']):?>
+    <script>
+      const error = "<?= $_GET['error']?>"
+      error == "empty" 
+        ? 
+        valoresVacios.style.display = "block"
+        :
+        invalidPassword.style.display = "block"
+    </script>
+  <?php endif;?>
 </body>
 </html>

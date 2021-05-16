@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +13,10 @@
   <link rel="stylesheet" href="assets/css/estilos.css">
 </head>
 <body>
-  <?php require_once("templates/nav.inc.php"); ?>
+  <?php
+    $active_link = "index";
+    require_once("templates/nav.inc.php");
+  ?>
   <section>
     <main>
       <h1>Productos</h1>
@@ -76,5 +84,19 @@
       </div>
     </main>
   </section>
+  <?php if(@$_GET['mensaje']):?>
+    <script>
+      const mensaje = "<?= $_GET['mensaje']?>"
+
+      switch(mensaje) {
+        case 'login_success':
+          alert("Ingresaste correctamente a tu cuenta")
+          break;
+        case 'exit_success':
+          alert("Saliste de tu cuenta correctamente")
+          break;
+      }
+    </script>
+  <?php endif;?>
 </body>
 </html>

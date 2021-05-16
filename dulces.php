@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +13,10 @@
   <link rel="stylesheet" href="assets/css/estilos.css">
 </head>
 <body>
-  <?php require_once("templates/nav.inc.php");?>
+  <?php
+    $active_link = "dulces";
+    require_once("templates/nav.inc.php");
+  ?>
   <section>
     <main>
       <h1>Dulces</h1>

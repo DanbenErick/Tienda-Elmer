@@ -21,6 +21,8 @@ nav {
       padding: 10px 30px; }
       nav .nav a:hover {
         background: #1d2222; }
+      nav .nav a.active {
+        background: #1d2222; }
   nav h1 {
     color: white;
     font-weight: light; }
