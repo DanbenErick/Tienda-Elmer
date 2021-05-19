@@ -1,6 +1,8 @@
 <?php
   session_start();
-
+  if(@$_SESSION["id"] != "") {
+    header("Location: index.php");
+  }
 ?>
 <!DOCTYPE html>
 <html lang="es">

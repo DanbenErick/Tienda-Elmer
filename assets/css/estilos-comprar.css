@@ -28,33 +28,29 @@ nav {
     font-weight: light; }
 
 section {
-  padding-bottom: 100px;
   display: flex;
   justify-content: center;
-  width: 100%; }
-  section main {
+  padding: 150px 0; }
+  section .contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     width: 70%; }
-  section h1 {
-    width: 100%;
-    display: block;
-    padding: 40px 0;
-    font-size: 40px; }
-
-.productos {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 30px;
-  max-width: 100%; }
-  .productos .producto {
-    max-width: 100%;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25); }
-    .productos .producto:hover {
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); }
-    .productos .producto p {
-      border-top: 1px solid rgba(0, 0, 0, 0.2);
-      text-align: center;
-      padding: 10px 0;
-      background: #343E3D;
-      color: white; }
-    .productos .producto img {
-      width: 100%; }
+  section .informacion h1 {
+    color: #343E3D;
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 30px; }
+  section .informacion b {
+    font-size: 20px; }
+  section .informacion .categoria {
+    padding-bottom: 10px; }
+  section .informacion .cantidad {
+    padding-bottom: 10px; }
+  section .informacion .precio {
+    padding-bottom: 10px; }
+  section .informacion .confirmar a {
+    display: inline-block;
+    background: #343E3D;
+    color: white;
+    text-decoration: none;
+    padding: 10px 40px; }

@@ -21,6 +21,8 @@ nav {
       padding: 10px 30px; }
       nav .nav a:hover {
         background: #1d2222; }
+      nav .nav a.active {
+        background: #1d2222; }
   nav h1 {
     color: white;
     font-weight: light; }
@@ -42,12 +44,12 @@ section {
         font-family: Poppins;
         width: 100%;
         padding-bottom: 5px; }
-      section .formulario .form-container .input-group input {
+      section .formulario .form-container .input-group input, section .formulario .form-container .input-group select {
         font-family: Poppins;
         width: 100%;
         padding: 5px;
         border: #3C91E6 1px solid; }
-        section .formulario .form-container .input-group input:focus {
+        section .formulario .form-container .input-group input:focus, section .formulario .form-container .input-group select:focus {
           outline: none;
           border: #1b78d4 1px solid; }
       section .formulario .form-container .input-group button {

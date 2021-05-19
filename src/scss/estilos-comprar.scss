@@ -1,0 +1,52 @@
+@import "modules/basico";
+@import "modules/nav";
+
+section {
+  display: flex;
+  justify-content: center;
+  padding: 150px 0;
+  .contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 70%;
+  }
+  .imagen{
+    img {
+
+    }
+  }
+  .informacion {
+
+    h1 {
+      color: $color-primario;
+      font-size: 40px;
+      font-weight: bold;
+      padding-bottom: 30px;
+    }
+    b {
+      font-size: 20px;
+
+    }
+    .categoria {
+      padding-bottom: 10px;
+    }
+    .cantidad {
+      padding-bottom: 10px;
+
+    }
+    .precio {
+      padding-bottom: 10px;
+
+    }
+    .confirmar {
+      
+      a {
+        display: inline-block;
+        background: $color-primario;
+        color: white;
+        text-decoration: none;
+        padding: 10px 40px;
+      }
+    }
+  }
+}

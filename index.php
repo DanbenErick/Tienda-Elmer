@@ -1,6 +1,10 @@
 <?php
 
-session_start();
+  session_start();
+
+  require_once("php/modules/funciones.inc.php");
+
+  $productos = traer_productos()["data"];
 
 ?>
 <!DOCTYPE html>
@@ -11,6 +15,13 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda</title>
   <link rel="stylesheet" href="assets/css/estilos.css">
+  <?php if(@$_SESSION["id"] != ""):?>
+  <style>
+  .producto:hover {
+    cursor: pointer;
+  }
+  </style>
+  <?php endif;?>
 </head>
 <body>
   <?php
@@ -21,69 +32,29 @@ session_start();
     <main>
       <h1>Productos</h1>
       <div class="productos">
-        <article class="producto">
-          <img src="https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-Nc9evRZF.jpg" alt="">
-          <p>Yogurt</p>
-        </article>
-        <article class="producto">
-          <img src="https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-Nc9evRZF.jpg" alt="">
-          <p>Yogurt</p>
-        </article>
-        <article class="producto">
-          <img src="https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-Nc9evRZF.jpg" alt="">
-          <p>Yogurt</p>
-        </article>
-        <article class="producto">
-          <img src="https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-Nc9evRZF.jpg" alt="">
-          <p>Yogurt</p>
-        </article>
-        <article class="producto">
-          <img src="https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-Nc9evRZF.jpg" alt="">
-          <p>Yogurt</p>
-        </article>
-        <article class="producto">
-          <img src="https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-Nc9evRZF.jpg" alt="">
-          <p>Yogurt</p>
-        </article>
-        <article class="producto">
-          <img src="https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-Nc9evRZF.jpg" alt="">
-          <p>Yogurt</p>
-        </article>
-        <article class="producto">
-          <img src="https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-Nc9evRZF.jpg" alt="">
-          <p>Yogurt</p>
-        </article>
-        <article class="producto">
-          <img src="https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-Nc9evRZF.jpg" alt="">
-          <p>Yogurt</p>
-        </article>
-        <article class="producto">
-          <img src="https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-Nc9evRZF.jpg" alt="">
-          <p>Yogurt</p>
-        </article>
-        <article class="producto">
-          <img src="https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-Nc9evRZF.jpg" alt="">
-          <p>Yogurt</p>
-        </article>
-        <article class="producto">
-          <img src="https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-Nc9evRZF.jpg" alt="">
-          <p>Yogurt</p>
-        </article>
-        <article class="producto">
-          <img src="https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-Nc9evRZF.jpg" alt="">
-          <p>Yogurt</p>
-        </article>
-        <article class="producto">
-          <img src="https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-Nc9evRZF.jpg" alt="">
-          <p>Yogurt</p>
-        </article>
-        <article class="producto">
-          <img src="https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-Nc9evRZF.jpg" alt="">
-          <p>Yogurt</p>
-        </article>
+        <?php foreach($productos as $producto):?>
+          <a href="comprar.php?id=<?= $producto["id"]?>">
+            <article class="producto">
+              <img src="<?= $producto["ruta_imagen"]?>" alt="">
+              <p><?= $producto["nombre"]?></p>
+            </article>
+          </a>
+        <?php endforeach;?>
       </div>
     </main>
   </section>
+  <?php if(@$_SESSION['id'] != ""):?>
+    <script>
+      const sessionSto
+      const productos = document.querySelectorAll('.producto')
+      productos.forEach(producto => {
+        producto.addEventListener("click", _ => {
+          alert("Añadido al carrito")
+          window.location = 'index.php'
+        })
+      })
+    </script>
+  <?php endif;?>
   <?php if(@$_GET['mensaje']):?>
     <script>
       const mensaje = "<?= $_GET['mensaje']?>"
