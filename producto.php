@@ -1,5 +1,5 @@
 <?php
-
+  session_start();
   require_once("php/modules/funciones.inc.php");
   $categorias = traer_categorias()["data"];
 ?>
@@ -42,8 +42,8 @@
             <input type="number" name="precio">
           </div>
           <div class="input-group">
-            <label for="">Imagen</label>
-            <input type="file" name="imagen">
+            <label for="">Imagen: 400px/400px</label>
+            <input type="file" name="imagen" accept=".jpg, .png, .gif">
           </div>
           
           <div class="input-group">

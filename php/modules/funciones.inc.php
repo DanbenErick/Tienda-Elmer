@@ -41,7 +41,7 @@
     if($select->execute()) {
       $data = $select->fetchAll()[0];
       // var_dump($data);
-      return password_verify($password, $data["password"])? ["ok" => true, "data" => ["id" => $data["id"], "nombre" => $data["nombre"]]]: ["ok" => false]; 
+      return password_verify($password, $data["password"])? ["ok" => true, "data" => ["id" => $data["id"], "nombre" => $data["nombre"], "permiso" => $data["permission"]]]: ["ok" => false]; 
     }
   }
 
@@ -93,4 +93,40 @@
     $select->bindParam(":id", $id);
     return $select->execute() ? ["ok" => true, "data" => $select->fetchAll()]: ["ok" => false, "data" => null];
   }
+
+  function registrar_venta($cliente, $productos, $estado) {
+    global $pdo;
+    $sql = "INSERT INTO ventas(fecha, cliente, productos, estado) VALUES (NOW(), :cliente, :productos, :estado)";
+    $insert = $pdo->prepare($sql);
+    $insert->bindParam(":cliente", $cliente);
+    $insert->bindParam(":productos", $productos);
+    $insert->bindParam(":estado", $estado);
+
+    return $insert->execute() ? ["ok" => true] : ["ok" => false];
+  }
+  function establecer_entregado($id) {
+    global $pdo;
+    $sql = "UPDATE ventas SET estado = 1 WHERE id = :id";
+
+    $update = $pdo->prepare($sql);
+    $update->bindParam(":id", $id);
+    return $update->execute() ? ["ok" => true] : ["ok" => false];
+  }
+  function establecer_rechazado($id) {
+    global $pdo;
+    $sql = "UPDATE ventas SET estado = 2 WHERE id = :id";
+
+    $update = $pdo->prepare($sql);
+    $update->bindParam(":id", $id);
+    return $update->execute() ? ["ok" => true] : ["ok" => false];
+  }
+  function traer_pedidos() {
+    global $pdo;
+    $sql = "SELECT * FROM ventas";
+    
+    $select = $pdo->prepare($sql);
+    return $select->execute() ? ["ok" => true, "data" => $select->fetchAll()]: ["ok" => false, "data" => null];
+  }
+
+  
 ?>

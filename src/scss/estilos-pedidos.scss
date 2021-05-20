@@ -1,0 +1,55 @@
+@import "modules/basico";
+@import "modules/nav";
+
+section {
+  display: flex;
+  justify-content: center;
+  .container {
+    width: 80%;
+  }
+  h1 {
+    font-size: 40px;
+    padding: 40px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    thead {
+      tr {
+        background: $color-primario;
+        color: white;
+        th {
+          padding: 10px 0;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          padding: 5px 0;
+          text-align: center;
+        }
+        &:hover {
+          background: rgba(black, .1);
+        }
+        a {
+          background: $color-secundario;
+          color: white;
+          text-decoration: none;
+          padding: 5px 0;
+          width: 30%;
+          display: inline-block;
+          &:hover {
+            background: darken($color-secundario, 10);
+          }
+        }
+        .entregada {
+          
+        }
+        .rechazada {
+
+        }
+      }
+    }
+  }
+}

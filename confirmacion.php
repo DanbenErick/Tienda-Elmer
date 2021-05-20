@@ -1,7 +1,8 @@
 <?php
 
-session_start();
-
+  session_start();
+  require_once("php/modules/funciones.inc.php");
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,12 +35,9 @@ session_start();
           <p>Daniel Bustillos Villar</p>
         </div>
         <div class="group-information">
-          <h2>N° Pedido</h2>
-          <p>1</p>
-        </div>
-        <div class="group-information">
           <h2>Fecha de Compra</h2>
           <p>Miercoles 20 de Julio del 2021</p>
+          <p>Para ver el estado del pedido clic <a href="estado.php?id=<?= $producto["nombre"] ?>">aqui</a></p>
         </div>
       </div>
       <div class="columna-2">

@@ -5,7 +5,6 @@
   require_once("php/modules/funciones.inc.php");
 
   $productos = traer_productos()["data"];
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,24 +32,27 @@
       <h1>Productos</h1>
       <div class="productos">
         <?php foreach($productos as $producto):?>
-          <a href="comprar.php?id=<?= $producto["id"]?>">
-            <article class="producto">
-              <img src="<?= $producto["ruta_imagen"]?>" alt="">
-              <p><?= $producto["nombre"]?></p>
-            </article>
-          </a>
+          <article class="producto" 
+            data-id="<?= $producto["id"] ?>" 
+            data-nombre="<?= $producto["nombre"]?>" 
+            data-imagen="<?= $producto["ruta_imagen"]?>"
+            data-precio="<?= $producto["precio"] ?>"
+          >
+            <img src="<?= $producto["ruta_imagen"]?>" alt="">
+            <p><?= $producto["nombre"]?></p>
+          </article>
         <?php endforeach;?>
       </div>
     </main>
   </section>
   <?php if(@$_SESSION['id'] != ""):?>
     <script>
-      const sessionSto
+      
       const productos = document.querySelectorAll('.producto')
       productos.forEach(producto => {
         producto.addEventListener("click", _ => {
           alert("Añadido al carrito")
-          window.location = 'index.php'
+          fetch(`anadir-carrito.php?id=${producto.dataset.id}&nombre=${producto.dataset.nombre}&imagen=${producto.dataset.imagen}&precio=${producto.dataset.precio}`)
         })
       })
     </script>
